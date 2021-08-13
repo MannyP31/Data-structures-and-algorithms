@@ -63,4 +63,34 @@ public static void main (String[] args)
     printArray(arr, 7);    
 }
 }
+
+
+
+_________________________________________________
+iterative implementation of the same algorithm. Same utility function swap() is used here
+
+
+
+static void leftRotate(int arr[], int d, int n)
+{
+int i, j;
+if(d == 0 || d == n)
+    return;
+i = d;
+j = n - d;
+while (i != j)
+{
+    if(i < j) 
+    {
+    swap(arr, d-i, d+j-i, i);
+    j -= i;
+    }
+    else 
+    {
+    swap(arr, d-i, d, j);
+    i -= j;
+    }
+    
+swap(arr, d-i, d, i);
+}
  
